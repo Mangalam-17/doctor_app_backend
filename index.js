@@ -24,7 +24,7 @@ const PORT = 8000;
 //midleware means that has access to req,res,next object.
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static('uploads'));
+app.use(express.static('uploads'));
 app.use(userRoutes);
 app.use(newRoutes);
 app.use(adminRoutes);
@@ -46,7 +46,7 @@ app.use(patientRoutes)
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/doctorsapp").then(()=>{
+mongoose.connect("mongodb+srv://mangalamab17:0Yi0x3esf5A2Rp5o@cluster1.lchkhkf.mongodb.net/doctors_app?retryWrites=true&w=majority&appName=Cluster1").then(()=>{
     console.log("connected to mongoDB");
 }).catch((err)=>{
     console.log(err);
